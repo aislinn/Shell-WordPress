@@ -1,0 +1,74 @@
+// Omega Reset Mixin
+// ------------------------------------------------------------------------------------	
+
+@mixin omega-reset($nth)
+	&:nth-child(#{$nth})
+		margin-right: flex-gutter()
+	&:nth-child(#{$nth}+1)
+		clear: none 
+
+
+
+// Full Width Images
+// ------------------------------------------------------------------------------------	
+
+@mixin full-width()
+	width: 100%
+	max-width: 100%
+	display: block
+
+
+
+// Grid Blocks 		
+// ------------------------------------------------------------------------------------			
+
+@mixin grid-block($gb-reset, $gb-span, $gb-omega)	
+	@include omega-reset($gb-reset)
+	@include span-columns($gb-span)
+	@include omega($gb-omega)	
+
+
+// Link Focus 		
+// ------------------------------------------------------------------------------------		
+
+@mixin tab-focus()
+	// Default
+	outline: 1px solid $primary-dark	
+	// WebKit
+	//outline: 5px auto $primary	
+	//outline-offset: -2px
+
+
+
+// Outer Container Padding		
+// ------------------------------------------------------------------------------------		
+
+@mixin outer-container-pad()
+
+	padding: 0 ($r * 1.25)
+	@include media($small)
+		padding: 0 ($r * 2)	
+
+
+
+// Cross Browser Opacity	
+// ------------------------------------------------------------------------------------		
+
+@mixin opacity($value) 
+	opacity: $value
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" $value * 100 ")"
+	filter: alpha(opacity= $value * 100 )
+	zoom: 1
+	
+
+
+// Default Transition	
+// ------------------------------------------------------------------------------------		
+
+@mixin fade
+	@include transition(all 0.275s ease-in-out)
+
+
+
+
+

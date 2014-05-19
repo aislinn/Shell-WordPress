@@ -1,0 +1,150 @@
+body
+	font-family: $font-1
+	font-size: 100% // 16px
+	color: $text-color
+	line-height: $line-height
+
+	//-webkit-font-smoothing: antialiased
+
+	@include media($small)
+		font-size: 112.5% // 18px
+
+
+h1, h2, h3, h4, h5, h6
+	font-family: $font-2
+	font-weight: bold
+	text-rendering: optimizeLegibility
+
+h1
+	font-size: $xxxl 
+	line-height: $lh-xxxl
+
+	&.lead
+		font-size: $lead-xl	
+		font-family: $font-1
+		position: relative
+
+h2
+	font-size: $xxl
+	line-height: $lh-xxl 
+
+h3
+	font-size: $xl
+	line-height: $lh-xl
+
+h4
+	font-size: $l
+	line-height: $lh-l
+
+h5
+	font-size: $r
+	line-height: $lh-r
+
+
+
+h2, h3, h4
+	&.lead
+		font-family: $font-1
+		font-weight: normal
+
+
+p
+	font-size: $r
+	line-height: $lh-r
+	
+
+
+p.lead
+	font-size: $l
+	font-weight: normal
+	line-height: $lh-l
+	font-style: italic
+	//margin-bottom: $r
+
+small
+	font-size: $s	
+	line-height: $lh-s
+
+ul, ol
+	font-size: $r
+	line-height: $lh-r
+
+ul
+	padding-left: 20px
+
+	&.no-bullet
+		padding-left: 0
+
+	*
+		font-size: 1em	
+
+
+ol	
+	padding-left: 26px	
+
+	&.no-bullet
+		padding-left: 0
+
+	*
+		font-size: 1em		
+
+
+blockquote
+	font-size: $r	
+	line-height: $lh-r
+	font-style: italic
+	padding-left: $l
+	border-left: 4px solid $primary
+
+address
+	font-size: $r	
+	font-style: normal
+
+dt
+	font-size: $r	
+	font-weight: bold
+
+code
+	padding: 2px 4px
+	font-size: $r * 0.75
+	//white-space: nowrap
+	color: $code-color
+	background: $code-color-light
+	border-radius: $radius
+
+pre
+	font-size: $r * 0.875
+	padding: $input-pad ($input-pad * 2)
+	background: $grey-xlight
+	border: 1px solid $grey
+	border-radius: $radius 
+
+strong, b
+	font-weight: bold
+
+em, i	
+	font-weight: italic
+
+
+
+
+
+h2, h3, h4
+	margin-bottom: 3px
+
+p, blockquote, address 
+	margin-bottom: $r 
+
+
+
+
+
+
+// Entry Specific
+// ------------------------------------------------------------------------------------	
+
+
+
+
+
+

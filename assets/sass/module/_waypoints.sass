@@ -1,0 +1,16 @@
+.sticky,
+.sticky-menu
+	&.stuck
+		position: fixed
+		top: 0
+		width: 100%
+		z-index: 2
+
+
+
+.test-waypoint
+	opacity: 0
+	@include transition (all 0.3s ease-in-out)
+
+	&.waypoint	
+		opacity: 1	

@@ -1,0 +1,87 @@
+.menu-bar
+	width: 100%
+	background: $text-color
+	color: #fff
+	display: none
+
+
+.menu-horizontal
+	display: none
+	background: #fff
+	border-bottom: 1px solid $grey-light
+
+	> ul
+		@extend .container
+
+	ul
+		@extend .no-bullet
+		text-align: center
+
+		li
+			position: relative
+			display: inline-block
+			
+			a
+				padding: 1em
+				display: block
+
+				&:hover
+					text-decoration: none	
+
+			&.active
+				a
+					color: $text-color
+
+			ul
+				position: absolute
+				left: 50%
+				margin-left: -75px
+				width: 150px
+				background: #fff
+				border: 1px solid $grey-light
+				border-top-color: #fff
+				border-radius: 0 0 $radius $radius
+				padding-bottom: 0.25em
+				top: 3.5em
+				display: none	
+
+				li
+					padding: 0 
+					display: block
+
+					a
+						padding: 0.5em 0
+						display: block
+
+					&:first-child
+						a
+							padding-top: 0	
+
+
+	@include media($large)
+		display: block
+
+
+
+
+
+
+
+
+
+
+#menu,
+.menu-bar,
+.hamburger
+
+	@include media($large)
+		display: none
+
+
+.sticky-menu-wrapper
+
+	position: relative
+	z-index: 2
+
+	@include media($max-large)
+		height: 0 !important

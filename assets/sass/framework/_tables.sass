@@ -1,0 +1,41 @@
+table
+	width: 100%
+	max-width: 100%
+	font-family: $font-2
+
+	thead
+		font-weight: bold
+	tbody
+		font-weight: normal
+	tfoot
+		font-style: italic
+
+
+	td, th
+		text-align: left	
+		padding: 0.125em 0.75em
+		vertical-align: middle
+
+	td	
+		border-top: 1px solid $grey
+
+
+	&.striped
+		> tbody > tr:nth-child(odd)
+			> td,
+			> th 
+				background-color: $grey-light
+
+
+	&.bordered	
+		border: 1px solid $grey	
+
+		td, th	
+			border: 1px solid $grey	
+
+
+
+
+
+
+

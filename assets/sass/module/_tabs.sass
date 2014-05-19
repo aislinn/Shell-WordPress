@@ -1,0 +1,57 @@
+.tab-container
+	@extend .container
+
+
+	> div
+		
+		text-align: center
+
+
+.tab-links
+	@extend .no-bullet
+	text-align: center
+	border-bottom: 1px solid $grey-light
+	margin-bottom: $xxl
+	float: left
+
+	@include media($small)		
+		float: none
+
+
+
+
+	li
+		display: inline-block
+		padding: 0 1em
+		width: 50%
+		float: left
+
+
+		a
+			padding: 0.25em 0
+			display: block
+			//border-bottom: 3px solid transparent
+
+			&:hover
+				text-decoration: none		
+
+		&.active
+			a	
+				//border-bottom-color: $primary
+
+
+		@include media($small)			
+			padding: 0 0.5em
+			width: auto
+			float: none
+
+			a
+				border-bottom: 3px solid transparent
+
+			&.active
+				a	
+					border-bottom-color: $primary
+
+
+		@include media($medium)	
+			padding: 0 1em			

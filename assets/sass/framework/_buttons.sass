@@ -1,0 +1,71 @@
+%button 
+	//@include button(simple, $primary)
+	//-webkit-font-smoothing: antialiased
+  
+	font-size: $r-button
+	font-family: $font-3
+	font-weight: normal
+	line-height: $input-lh
+	text-transform: uppercase
+	background: $primary
+	border: 1px solid $primary
+	color: #fff
+	padding: $input-pad ($input-pad * 2)
+	border-radius: $radius
+
+
+	&:hover,
+	&:focus
+		background: $primary-dark
+		border-color: $primary-dark
+		color: #fff
+		text-decoration: none
+
+	&:focus
+		outline: none	
+
+ 
+
+
+.button
+	@extend %button
+	display: inline-block
+
+	&.large
+		@extend %button
+		padding: ($input-pad * 1.5) ($input-pad * 3.5)
+
+
+
+
+
+
+.hamburger
+	display: inline-block
+	text-align: left
+	text-indent: -9999px
+	height: 2em
+	width: 3em
+	border: 1px solid #fff
+	//border-radius: $radius
+	position: relative
+
+	&:before
+		content: ""
+		position: absolute
+		left: 0.625em
+		right: 0.625em
+		top: 0.575em
+		height: 1px
+		background: #fff
+		box-shadow: 0 6px 0 0 #fff, 0 12px 0 0 #fff
+
+
+	&:hover,
+	&:focus
+		outline: none	
+
+
+
+
+

@@ -1,0 +1,55 @@
+// Stretched Background Sidebar Color
+// ------------------------------------------------------------------------------------	
+
+
+.stretch-main
+
+	background: #fff
+
+	@include media($medium)
+		@include span-columns(9)
+
+		padding-right: 2.5 * $r
+
+	@include media(1100px)
+		padding-right: 3 * $r	
+
+	@include media($xlarge)	
+		padding-right: 3.5 * $r		
+
+
+.stretch-sidebar
+	@include media($medium)
+		@include span-columns(3)
+
+		background: $primary
+		color: #fff
+		padding-left: 1.75 * $r
+
+
+	@include media(1100px)
+		padding-left: 2.25 * $r		
+
+	@include media($xlarge)
+		padding-left: 2.75 * $r		
+
+
+
+
+// Fixed Sidebar, Fluid Main Area
+// ------------------------------------------------------------------------------------	
+
+
+
+.fixed-sidebar
+	background: $bg-dark
+	color: #fff
+	
+	@include media($medium)
+		width: 250px
+		display: table-cell
+		vertical-align: top
+		
+
+
+.fluid-main

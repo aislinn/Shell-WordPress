@@ -1,0 +1,149 @@
+#{$all-text-inputs},
+textarea,
+select[multiple=multiple]
+
+	@include full-width
+	@include box-sizing(border-box)
+	@include transition(border-color)
+
+	border: 1px solid $grey
+	background-color: #fff
+	border-radius: $radius
+	font-family: $font-1
+	font-size: $r-input
+	line-height: $input-lh
+	padding: $input-pad
+	margin-bottom: $input-bottom
+	@include appearance(none)
+
+	&:focus
+		outline: none
+		border-color: $primary-dark
+
+	&[disabled]
+		background: $grey-xlight
+
+
+textarea
+	resize: vertical
+	height: 10em		
+
+
+button,
+input[type="submit"] 
+	@extend %button
+	@include appearance(none)
+	cursor: pointer
+	user-select: none
+	vertical-align: middle
+	white-space: nowrap	
+	@include full-width
+
+
+label
+	@include full-width
+	font-weight: bold
+
+legend
+	font-weight: bold	
+
+
+fieldset
+	border: 1px solid $grey	
+	border-radius: $radius
+	padding: $input-pad ($input-pad * 2)
+	margin-bottom: $input-bottom
+
+
+fieldset,
+.form-group
+
+	input[type="checkbox"]
+		height: $r
+		vertical-align: baseline
+
+	input[type="radio"]
+		height: $r
+
+	label
+		padding-left: $r * 1.45
+		display: block
+		margin-top: - ($r * 1.65)	
+		line-height: $input-lh
+		margin-bottom: $input-bottom / 2
+		font-weight: normal
+
+		
+.form-group
+	margin-bottom: $input-bottom
+
+	+ .form-group
+		margin-bottom: $input-bottom * 2	
+
+	legend
+		margin-bottom: $input-bottom
+
+
+select
+	@include full-width
+	border: 1px solid $grey	
+	border-radius: $radius
+	display: block
+	margin-bottom: $input-bottom
+	font-size: $r
+	height: $r * 2.5
+	padding: $input-pad
+	line-height: 1
+	-webkit-appearance: none
+	position: relative
+	background: #fff url(../img/ui/ui-select-dropdown.jpg) no-repeat 97.5% 13px 
+	background-size: 16px
+
+	@include media($small)
+		background-position: 98% 13px
+
+	@-moz-document url-prefix()
+		background: none	
+
+	&:focus
+		outline: none
+		border-color: $primary-dark
+
+	&:after
+		position: absolute
+		height: $r	
+		background: $text-color
+		content: ''
+		right: $input-pad
+		top: $input-pad
+
+
+select[multiple]
+	height: auto
+	background: none
+
+
+meter, 
+progress
+	@include full-width
+	margin-bottom: $input-bottom
+
+
+input[type="range"] 
+	@include full-width
+	margin-bottom: $input-bottom 
+	height: $r * 1.5
+
+input[type="file"]
+	@include full-width
+	font-size: $s 
+	margin-bottom: $input-bottom 
+
+
+
+
+.placeholder 
+	color: #aaa
+
+
+

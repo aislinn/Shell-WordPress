@@ -1,0 +1,116 @@
+// Body
+// ------------------------------------------------------------------------------------	
+
+
+html, body
+	height: 100%
+
+body
+
+	.page-wrapper
+		//background: #fff !important
+
+		@include media($medium)
+			//@include linear-gradient(left, #FFF 50%, $primary 50%)
+
+		display: table
+		height: 100%
+		width: 100%
+
+
+.page-footer
+	display: table-row
+	height: 1px
+			
+
+
+
+// Links
+// ------------------------------------------------------------------------------------	
+
+a
+	color: $primary	
+	text-decoration: none
+
+	&:hover,
+	&:focus
+		color: $primary-dark
+		
+	&:hover
+		text-decoration: underline
+
+	&:focus
+		@include tab-focus	
+
+
+
+// Page Selection
+// ------------------------------------------------------------------------------------	
+
+
+::-moz-selection	
+	background: $primary	
+	color: #fff
+
+::selection		
+	background: $primary	
+	color: #fff
+
+img::-moz-selection
+	background: transparent
+
+img::selection
+	background: transparent
+
+body
+	-webkit-tap-highlight-color: rgba(0,0,0,0)
+
+
+
+// Text Alignment
+// ------------------------------------------------------------------------------------	
+
+.text-left
+	text-align: left
+.text-center
+	text-align: center
+.text-right
+	text-align: right	
+.text-justify
+	text-align: justify	
+
+
+
+// List Style
+// ------------------------------------------------------------------------------------	
+
+.no-bullet
+	list-style: none
+	padding-left: 0
+
+ul.inline
+	li	
+
+		display: inline-block
+		padding: 0 0.5rem
+	margin-left: -0.5rem	
+
+		
+
+// Vertically Center Content
+// ------------------------------------------------------------------------------------	
+
+.vcenter1
+	display: table
+	width: 100%
+	height: 100%
+	overflow: hidden
+
+.vcenter2
+	display: table-cell
+	vertical-align: middle
+
+.vcenter3
+	margin: 0
+
+

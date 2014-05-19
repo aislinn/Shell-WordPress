@@ -1,0 +1,35 @@
+.hero
+	//background: $text-color url(../img/hero/sample.jpg) center center no-repeat
+	//background-size: cover
+	background: $bg-dark
+	background-attachment: fixed
+	//height: 25em
+	color: #fff
+	position: relative
+	z-index: 1
+	overflow: hidden
+
+	*
+		z-index: 2
+
+
+	&:after
+		position: absolute
+		z-index: 1
+
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+
+		content: ''
+		
+		@include background-image(linear-gradient(transparent 0, #000 66%))
+		@include opacity(0.65)
+	
+	
+
+
+
+
+

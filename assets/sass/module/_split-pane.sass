@@ -1,0 +1,37 @@
+.split-pane
+
+	//display: table
+	background: #eee
+	background: url(../img/hero/sample2.jpg) center
+	background-size: cover
+
+	@include row()
+	
+
+
+	> div
+		width: 100%
+		display: block
+		background: #fff
+
+		padding-top: 4 * $r 
+
+
+		@include media($medium)
+			width: 50%
+			margin-left: 50%
+			float: left
+
+
+			// TEMP
+
+			.container
+
+				padding-left: 4 * $r 
+				padding-bottom: 4 * $r 
+
+
+				max-width: 450px	
+				float: left
+
+

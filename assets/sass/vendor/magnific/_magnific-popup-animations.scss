@@ -1,0 +1,400 @@
+
+/* text-based popup styling */
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 25px;
+  width:auto;
+  max-width: 700px;
+  margin: 0 auto; 
+}
+
+
+
+// ====== Zoom effect ======
+
+
+.mfp-zoom-in {
+  
+  /* start state */
+  .mfp-with-anim {
+
+    @include opacity(0);
+    @include transition(all 0.2s ease-in-out);
+    @include transform(scale(0.8));
+
+  }
+  
+  &.mfp-bg {
+
+    @include opacity(0);
+    @include transition(all 0.3s ease-out);
+    
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+
+      @include opacity(1);
+      @include transform(scale(1));
+    }
+    &.mfp-bg {
+      
+      @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      
+      @include transform(scale(0.8));
+      @include opacity(0);
+    
+    }
+    
+    &.mfp-bg {
+
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+/* 
+
+====== Newspaper effect ======
+
+*/
+.mfp-newspaper {
+  
+  /* start state */
+  .mfp-with-anim {
+    @include opacity(0);
+    @include transition(all 0.5s);
+    
+    
+
+    @include transform(scale(0) rotate(500deg));
+  }
+  
+  &.mfp-bg {
+    @include opacity(0);
+    @include transition(all 0.5s);
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      @include opacity(1);
+      @include transform(scale(1) rotate(0deg));
+
+    }
+    &.mfp-bg {
+      @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+
+      @include transform(scale(0) rotate(500deg));
+      @include opacity(0);
+    }
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+
+/* 
+
+====== Move-horizontal effect ======
+
+*/
+.mfp-move-horizontal {
+  
+  /* start state */
+  .mfp-with-anim {
+    @include opacity(0);
+    @include transition(all 0.3s);
+    @include transform(translateX(-50px));
+
+  }
+  
+  &.mfp-bg {
+    @include opacity(0);
+    @include transition(all 0.3s);
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+
+      @include opacity(1);
+      @include transform(translateX(0));  
+
+    }
+    &.mfp-bg {
+     @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      @include transform(translateX(50px));  
+      @include opacity(0);
+    }
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+
+
+/* 
+
+====== Move-vertical effect ======
+
+*/
+.mfp-move-vertical {
+  
+  /* start state */
+  .mfp-with-anim {
+    @include opacity(0);
+    @include transition(all 0.3s);
+    @include transform(translateY(-50px));
+
+  }
+  
+  &.mfp-bg {
+    @include opacity(0);
+    @include transition(all 0.3s);
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+
+      @include opacity(1);
+      @include transform(translateY(0));  
+
+    }
+    &.mfp-bg {
+     @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      @include transform(translateY(-50px));  
+      @include opacity(0);
+    }
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+
+
+
+
+
+/* 
+
+====== Move-from-top effect ======
+
+*/
+.mfp-move-from-top {
+  
+  .mfp-content {
+   vertical-align:top; 
+  }
+  
+  /* start state */
+  .mfp-with-anim {
+    @include opacity(0);
+    @include transition(all 0.2s);
+    @include transform(translateY(-100px));
+
+  }
+  
+  &.mfp-bg {
+    @include opacity(0);
+    @include transition(all 0.2s);
+
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      @include opacity(1);
+      @include transform(translateY(0));
+   
+    }
+    &.mfp-bg {
+
+      @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      @include transform(translateY(-50px));
+      @include opacity(0);
+
+    }
+
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+/* 
+
+====== 3d unfold ======
+
+*/
+.mfp-3d-unfold {
+  
+ 
+  .mfp-content {
+
+
+    @include perspective(2000px);
+  }
+  
+  /* start state */
+  .mfp-with-anim {
+    @include opacity(0);
+    @include transition(all 0.3s ease-in-out);
+    @include transform-style(preserve-3d);
+    @include transform(rotateY(-60deg));
+  }
+  
+  
+  &.mfp-bg {
+    @include opacity(0);
+    @include transition(all 0.5s);
+
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      
+      @include opacity(1);
+      @include transform(rotateY(0deg));
+
+    }
+    &.mfp-bg {
+
+      @include opacity(0.8);
+
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+
+      @include transform(rotateY(60deg));
+      @include opacity(0);
+      
+    }
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+
+
+/* 
+
+====== Zoom-out effect ======
+
+*/
+.mfp-zoom-out {
+  
+  /* start state */
+  .mfp-with-anim {
+
+    @include opacity(0);
+    @include transition(all 0.3s ease-in-out);
+    @include transform(scale(1.3));
+
+  }
+  
+  &.mfp-bg {
+
+
+    @include opacity(0);
+    @include transition(all 0.3s ease-in-out);
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      @include opacity(1);
+      @include transform(scale(1));
+    }
+    &.mfp-bg {
+
+      @include opacity(0.8);
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+
+      @include transform(scale(1.3));
+      @include opacity(0);
+  
+    }
+    &.mfp-bg {
+      @include opacity(0);
+    }
+    
+  }
+  
+}
+
+
+
+
+

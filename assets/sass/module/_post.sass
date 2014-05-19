@@ -1,0 +1,62 @@
+.post-entry	
+
+	@extend .container
+
+	//img
+		width: 100%
+		max-width: 100%
+
+
+	p.lead
+		margin-top: $r
+
+
+	.fluid-width-video-wrapper,
+	img
+		//margin-bottom: $r * 1.125	
+
+	> ul,
+	> ol
+
+		margin-bottom: $r
+
+
+
+	.fluid-width-video-wrapper, img
+		display: inline-block
+		margin-top: 5px
+
+
+
+	[class^="grid-block"]
+		padding: 0
+		margin-bottom: $r
+
+		img
+			margin-bottom: 0	
+
+
+	.align-left
+	
+		@include media($small)
+			float: left	
+			width: 33.333%
+			margin-right: $r * 1.5
+			margin-bottom: 18px
+
+	.align-right
+	
+		@include media($small)
+			float: right	
+			width: 33.333%
+			margin-left: $r * 1.5
+			margin-bottom: 18px
+
+	.align-center
+	
+		@include media($small)
+			text-align: center
+			width: 33.333%
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 18px		

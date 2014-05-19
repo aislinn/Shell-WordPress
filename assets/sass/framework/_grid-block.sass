@@ -1,0 +1,151 @@
+[class^="grid-block"]
+	@include outer-container
+	@include outer-container-pad
+
+	li
+		img
+			@include full-width 
+
+		margin-bottom: $gutter
+
+
+
+.grid-block-2
+	li
+		@include media($min)  
+			@include grid-block(1n, 12, 1n)
+		
+		@include media($medium)  
+			@include grid-block(1n, 6, 2n)	
+
+
+.grid-block-3
+	li
+		@include media($min)  
+			@include grid-block(1n, 12, 1n)
+		
+		@include media($small)  
+			@include grid-block(1n, 6, 2n)	
+
+		@include media($medium)  
+			@include grid-block(2n, 4, 3n)	
+
+
+.grid-block-4
+	li
+		@include media($min)  
+			@include grid-block(1n, 12, 1n)
+		
+		@include media($small)  
+			@include grid-block(1n, 6, 2n)	
+
+		@include media($medium)  
+			@include grid-block(2n, 4, 3n)	
+
+		@include media($large)  
+			@include grid-block(3n, 3, 4n)
+
+
+.grid-block-6
+	li
+		@include media($min)  
+			@include grid-block(1n, 12, 1n)
+		
+		@include media($small)  
+			@include grid-block(1n, 6, 2n)	
+
+		@include media($medium)  
+			@include grid-block(2n, 3, 4n)	
+
+		@include media($large)  
+			@include grid-block(4n, 2, 6n)	
+
+
+
+
+
+
+.grid-block-full
+	position: relative
+	z-index: 1
+
+	max-width: none
+	padding: 0
+
+	li	
+		margin-right: 0
+		margin-bottom: 0
+
+		@include omega(1n)
+
+		&:nth-child(1n+1)
+			clear: none
+
+
+	&.grid-block-2
+		li
+
+			@include media($medium)  
+				width: 50%	
+				
+
+
+	&.grid-block-3
+		li
+			@include media($small)  
+				width: 50%
+
+			@include media($medium)  
+				width: 33.333%	
+
+
+	&.grid-block-4
+		li
+			@include media($small)  
+				width: 50%
+
+			@include media($medium)  
+				width: 33.333%	
+
+			@include media($large)  
+				width: 25%
+				
+
+	&.grid-block-6
+		li
+			@include media($small)  
+				width: 50%
+
+			@include media($medium)  
+				width: 25%	
+
+			@include media($large)  
+				width: 16.666666667%			
+	
+
+
+
+// IE 8
+// ------------------------------------------------------------------------------------	
+
+
+.lt-ie9
+	.grid-block-2
+		li
+			@include grid-block(1n, 6, 2n)
+	.grid-block-3
+		li
+			@include grid-block(2n, 4, 3n)	
+	.grid-block-4
+		li 
+			@include grid-block(3n, 3, 4n)
+	.grid-block-6
+		li
+			@include grid-block(4n, 2, 6n)	
+
+
+
+
+
+
+

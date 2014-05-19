@@ -1,0 +1,63 @@
+.flexslider
+	position: relative
+	overflow: hidden
+	@include row
+
+	.slides
+		zoom: 1
+		margin: 0
+		padding: 0
+
+		li
+
+			position: relative
+
+			img
+				display: block
+				width: 100%
+				max-width: 100%
+				height: auto
+
+			div	
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+
+				color: #fff
+				padding-top: 8 * $r
+
+
+
+
+
+
+
+
+
+.flex-control-nav
+	position: absolute
+	width: 100%
+	left: 0
+	bottom: 4 * $r
+	text-align: center
+	list-style-type: none
+	padding-left: 0
+	z-index: 2
+
+	li
+		display: inline-block
+		margin: 0 6px
+
+		a
+			cursor: pointer
+			display: block
+			width: 14px
+			height: 14px
+			text-indent: -9999px
+			overflow: hidden
+			background: #fff
+
+			&.flex-active
+				background: $primary
