@@ -1,5 +1,6 @@
 <?php ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php shell_post_thumbnail(); ?>
 <div class="post-container">
 <header class='post-header'>
   <?php the_title( sprintf( '<h1><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>

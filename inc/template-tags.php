@@ -48,15 +48,15 @@ function shell_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
+	<nav class="post-nav" role="navigation">
 		
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'shell' ) );
 				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'shell' ) );
 			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
+		</div>
+	</nav>
 	<?php
 }
 endif;
@@ -157,37 +157,23 @@ add_action( 'save_post',     'shell_category_transient_flusher' );
 
 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Displays featured image
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
 function shell_post_thumbnail() {
-	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
-		return;
+
+	if ( has_post_thumbnail() ) {
+		echo '<div class="post-thumbnail">';
+    	the_post_thumbnail();
+    echo '</div>';
+	
+	} else { 		
+		echo '<div class="post-thumbnail"><img src="'.get_bloginfo('template_directory').'/assets/img/default/thumb-large.jpg"></div>';
 	}
 
-	if ( is_singular() ) :
-	?>
-
-	<div class="post-thumbnail">
-	<?php
-		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'shell-full-width' );
-		} else {
-			the_post_thumbnail();
-		}
-	?>
-	</div>
-
-	<?php else : ?>
-
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
-	<?php
-		if ( ( ! is_active_sidebar( 'sidebar-2' ) || is_page_template( 'page-templates/full-width.php' ) ) ) {
-			the_post_thumbnail( 'shell-full-width' );
-		} else {
-			the_post_thumbnail();
-		}
-	?>
-	</a>
-
-	<?php endif; // End is_singular()
 }
 
 

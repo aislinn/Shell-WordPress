@@ -1,44 +1,17 @@
 <?php
-/**
- * shell functions and definitions
- *
- * @package shell
- */
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
 
 if ( ! function_exists( 'shell_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
 function shell_setup() {
 
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on shell, use a find and replace
-	 * to change 'shell' to the name of your theme in all the template files
-	 */
-	load_theme_textdomain( 'shell', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	//add_theme_support( 'post-thumbnails' );
+	//Enable support for Post Thumbnails on posts and pages.
+	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size( 1000, 450, true );
+	add_image_size( 'shell-thumbnail', 210, 150, true );
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -47,6 +20,7 @@ function shell_setup() {
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'shell_custom_background_args', array(
@@ -66,6 +40,52 @@ function shell_setup() {
 endif; // shell_setup
 add_action( 'after_setup_theme', 'shell_setup' );
 
+
+
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Forces small images to upsize for featured images
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+class ThumbnailUpscaler
+{
+	/** http://wordpress.stackexchange.com/questions/50649/how-to-scale-up-featured-post-thumbnail **/
+	static function image_crop_dimensions($default, $orig_w, $orig_h, $new_w, $new_h, $crop)
+	{
+	    if(!$crop)
+	    	return null; // let the wordpress default function handle this
+	
+	    $aspect_ratio = $orig_w / $orig_h;
+	    $size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
+	
+	    $crop_w = round($new_w / $size_ratio);
+	    $crop_h = round($new_h / $size_ratio);
+	
+	    $s_x = floor( ($orig_w - $crop_w) / 2 );
+	    $s_y = floor( ($orig_h - $crop_h) / 2 );
+	
+	    return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
+	}
+}
+
+add_filter('image_resize_dimensions', array('ThumbnailUpscaler', 'image_crop_dimensions'), 10, 6);
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * Register widget area.
  *
@@ -78,8 +98,8 @@ function shell_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h5 class="widget-title">',
+		'after_title'   => '</h5>',
 	) );
 }
 add_action( 'widgets_init', 'shell_widgets_init' );

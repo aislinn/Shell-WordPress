@@ -576,18 +576,18 @@ table {
     -o-transform: scale(1.5);
     transform: scale(1.5); }
 
-.container, .menu-horizontal > ul, .tab-container, .post-entry, .post-container {
+.container, .menu-horizontal > ul, .tab-container, .post-entry, .post-container, .post-comments, .post-nav {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   padding: 0 1.25em;
   position: relative; }
-  .container:after, .menu-horizontal > ul:after, .tab-container:after, .post-entry:after, .post-container:after {
+  .container:after, .menu-horizontal > ul:after, .tab-container:after, .post-entry:after, .post-container:after, .post-comments:after, .post-nav:after {
     content: "";
     display: table;
     clear: both; }
   @media screen and (min-width: 480px) {
-    .container, .menu-horizontal > ul, .tab-container, .post-entry, .post-container {
+    .container, .menu-horizontal > ul, .tab-container, .post-entry, .post-container, .post-comments, .post-nav {
       padding: 0 2em; } }
 
 [class^="grid-block"] {
@@ -3882,7 +3882,7 @@ section {
 .page-footer {
   background: #1d1d1d;
   color: white; }
-  .page-footer .container, .page-footer .menu-horizontal > ul, .page-footer .tab-container, .page-footer .post-entry, .page-footer .post-container {
+  .page-footer .container, .page-footer .menu-horizontal > ul, .page-footer .tab-container, .page-footer .post-entry, .page-footer .post-container, .page-footer .post-comments, .page-footer .post-nav {
     padding-top: 2em;
     padding-bottom: 2em; }
 
@@ -3982,7 +3982,7 @@ section {
         width: 50%;
         margin-left: 50%;
         float: left; }
-        .split-pane > div .container, .split-pane > div .menu-horizontal > ul, .split-pane > div .tab-container, .split-pane > div .post-entry, .split-pane > div .post-container {
+        .split-pane > div .container, .split-pane > div .menu-horizontal > ul, .split-pane > div .tab-container, .split-pane > div .post-entry, .split-pane > div .post-container, .split-pane > div .post-comments, .split-pane > div .post-nav {
           padding-left: 4em;
           padding-bottom: 4em;
           max-width: 450px;
